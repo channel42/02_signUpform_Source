@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sign up form</title>
+	<script type="text/javascript" src = "source.js"></script>
+	<link rel="stylesheet" type="text/css" href="sourceCss.css">
+</head>
+<body>
+	<div id = "totalTorm" width="200">
+		<form name="signUp">
+			<table align="center" border="0" cellpadding="5">
+				<!--타이틀 라인 출력-->
+				<tr>
+					<td colspan="4" align="center" class="title">
+						<h2>회&nbsp&nbsp&nbsp원&nbsp&nbsp&nbsp가&nbsp&nbsp&nbsp입</h2>
+					</td>
+				</tr>
+
+				<!--아이디, E-mail라인-->
+				<tr height="80">
+					<!-- 아이디 칸 -->
+					<td width="100" align="center" class="item">아이디</td>
+					
+					<!-- 아이디 입력 칸-->
+					<td width="280" id="inputId" class="inputItem"> 
+						<input type="text" id="ID"> <br/>
+						<comment>특수문자 제외 8~20자</comment>
+						<div id = "errorId"></div>	<!-- 에러 메세지 출력 -->
+					</td>
+					
+					<!-- 이메일 칸-->
+					<td width="100" align="center" class="item">E-mail</td>
+					
+					<!-- 이메일 입력 칸-->
+					<td width="270" id="inputEmail" class="inputItem">
+						<input type="email" id="email"> <br/>
+						<comment>ex) sample@sample.com</comment>
+						<div id = "errorEmail"></div>	<!-- 에러 메세지 출력 -->
+					</td>
+				</tr>
+
+				<!--비밀번호, 전화 라인-->
+				<tr height="80">
+					<!--비밀번호 칸-->
+					<td align="center" class="item">비밀번호</td>
+					
+					<!--비밀번호 입력 칸-->
+					<td id="inputPw" class="inputItem"> 
+						<input type="password" id="PW"> <br/>
+						<comment>영문소문자 특수문자를 포함한 8~20자</comment>
+						<div id = "errorPW"></div>	<!-- 에러 메세지 출력 -->
+					</td>
+
+					<!-- 전화 칸-->
+					<td align="center" class="item">전화</td>
+
+					<!-- 전화 입력칸-->
+					<td id="inputCall" class="inputItem">
+						<select id="callNum1">
+						<option value="">선택</option>
+						<option value="02">02</option>
+						<option value="031">031</option>
+						<option value="032">032</option>
+						<option value="033">033</option>
+						<option value="041">041</option>
+						<option value="042">042</option>
+						<option value="043">043</option>
+						<option value="051">051</option>
+						<option value="052">052</option>
+						<option value="053">053</option>
+						<option value="061">061</option>
+						<option value="062">062</option>
+						<option value="063">063</option>
+						</select> -
+
+						<input type="text" id="callNum2" size="4"> -
+
+						<input type="text" id="callNum3" size="4">
+						<div id = "errorCallNum"></div>	<!-- 에러 메세지 출력 -->
+					</td>
+				</tr>
+
+				<!--비밀번호 확인 휴대폰 라인-->
+				<tr height="80">
+					<!-- 비밀번호 확인 칸-->
+					<td align="center" class="item">비밀번호<br/>확인</td>
+					
+					<!-- 비밀번호 확인 입력 칸-->
+					<td id="inputPWconfirm" class="inputItem"> 
+						<input type="password" id="PWcheck"> 
+						<div id = "errorPWconfirm"></div>	<!-- 에러 메세지 출력 -->
+					</td>
+
+					<!-- 휴대폰 칸-->
+					<td align="center" class="item">휴대폰</td>
+					
+					<!-- 휴대폰 입력 칸-->
+					<td id="inputPhoneNum" class="inputItem"> 
+						<select id="phoneNum1">
+						<option value="">선택</option>
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="016">016</option>
+						<option value="017">017</option>
+						<option value="018">018</option>
+						<option value="019">019</option>
+						</select> -
+						<input type="text" id="phoneNum2" size="4"> -
+						<input type="text" id="phoneNum3" size="4">
+						<div id = "errorPhoneNum"></div>	<!-- 에러 메세지 출력 -->
+					</td>
+				</tr>
+
+				<!--닉테임, 성별 라인-->
+				<tr height="80">
+					<!-- 닉네임 칸-->
+					<td align="center" class="item">닉네임</td>
+					
+					<!-- 닉네임 입력 칸-->
+					<td id="inputNick" class="inputItem">
+						<input type="text" id="nickName"><br/>
+						<comment>한글 8~20자</comment>
+						<div id = "errorNick"></div>	<!-- 에러 메세지 출력 -->
+					</td>
+					
+					<!-- 성별 칸-->
+					<td align="center" class="item">성별</td>
+					
+					<!-- 성별 선택 칸-->
+					<td id="inputSex" class="inputItem">
+						<input type="radio" id="sex" name = "sex1" value="male" onclick="check_only(this)">남
+						<input type="radio" id="sex" name = "sex1" value="female" onclick="check_only(this)">여
+						<div id = "errorSex"></div>		<!-- 에러 메세지 출력 -->
+					</td>
+				</tr>
+
+				<!--주소 라인-->
+				<tr height="80">
+					<!-- 주소 칸-->
+					<td align="center" class="item">주소</td>
+
+					<!-- 주소 입력 칸-->
+					<td id="inputAddr" colspan="3" class="inputItem">
+						<input type="text" id="address1" size="50"> <br/>
+						<input type="text" id="address2" size="30">
+						<comment>상세 주소 입력</comment>
+						<div id = "errorAddr"></div>		<!-- 에러 메세지 출력 -->
+					</td>
+				</tr>
+
+				<!--우편번호 라인-->
+				<tr height="80">
+					<!-- 우편번호 칸-->
+					<td align="center" class="item">우편번호</td>
+
+					<!-- 우편번호 입력 칸-->
+					<td id="inputAddrNum" colspan="3" class="inputItem">
+						<input type="text" id="addressNum1" size="3">
+						-
+						<input type="text" id="addressNum2" size="3">
+						<div id = "errorAddrNum"></div>		<!-- 에러 메세지 출력 -->
+					</td>
+				</tr>
+			</table>
+			<center>
+				<br/>
+				<input type="reset" value="다시 작성" align="center">
+				&nbsp&nbsp&nbsp
+				<input type="button" value="제출" align="center" onclick="check();">
+			</center>
+		</form>
+	</div>
+</body>
+</html>
